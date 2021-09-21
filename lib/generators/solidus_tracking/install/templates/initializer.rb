@@ -8,7 +8,7 @@ SolidusTracking.configure do |config|
 
   # A proc that accepts a variant and returns the URL of that variant's PDP.
   config.variant_url_builder = proc do |variant|
-    Spree::Core::Engine.routes.url_helpers.edit_password_url(
+    Spree::Core::Engine.routes.url_helpers.product_url(
       variant.product,
       protocol: 'https',
       host: Spree::Store.default.url,
